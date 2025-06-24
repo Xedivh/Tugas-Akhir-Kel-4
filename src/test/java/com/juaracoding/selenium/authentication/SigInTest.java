@@ -69,6 +69,7 @@ public class SigInTest {
             Assert.assertTrue(currentUrl.contains("dashboard") || currentUrl.contains("home"));
         } catch (Exception e) {
             throw new SkipException("testStep01: " + e.getMessage());
+            //Halo
         }
     }
 }
