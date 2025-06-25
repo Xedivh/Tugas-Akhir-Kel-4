@@ -5,6 +5,7 @@
     <test verbose="0" name="Firt My Test">
         <classes>
             <class name="com.juaracoding.selenium.authentication.SigInTest" />
+            <class name="com.juaracoding.selenium.authentication.ImportAbsen" />
         </classes>
     </test>
 </suite>
