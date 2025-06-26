@@ -91,8 +91,4 @@ public class ImportAbsen {
         System.out.println("Template download initiated.");
     }
 
-    @AfterClass
-    public void tearDown() {
-        DriverSingleton.quitDriver();
-    }
 }
