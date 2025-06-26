@@ -6,6 +6,8 @@
         <classes>
             <class name="com.juaracoding.selenium.authentication.SigInTest" />
             <class name="com.juaracoding.selenium.authentication.ImportAbsen" />
+            <class name="com.juaracoding.selenium.ImportAbsenNeg" />
+            <class name="com.juaracoding.selenium.authentication.ImportCuti" />
         </classes>
     </test>
 </suite>
