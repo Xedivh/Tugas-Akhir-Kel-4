@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite Test Web">
-    <parameter name="url" value="https://magang.dikahadir.com/authentication/login"></parameter>
-    <test verbose="0" name="Firt My Test">
+
+    <test verbose="0" name="First My Test - Chrome">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="url" value="https://magang.dikahadir.com/authentication/login"/>
         <classes>
-            <class name="com.juaracoding.selenium.authentication.SigInTest" />
+            <class name="com.juaracoding.selenium.testcases.ImportAbsenTest" />
+            <class name="com.juaracoding.selenium.testcases.ImportStrukturUserTest" />
         </classes>
     </test>
-</suite>
+
+    </suite>
