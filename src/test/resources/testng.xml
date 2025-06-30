@@ -6,10 +6,12 @@
         <parameter name="browser" value="chrome"/>
         <parameter name="url" value="https://magang.dikahadir.com/authentication/login"/>
         <classes>
-            <class name="com.juaracoding.selenium.testcases.ImportAbsenTest" />
-            <class name="com.juaracoding.selenium.testcases.ImportStrukturUserTest" />
-            <class name="com.juaracoding.selenium.ImportAbsenNeg" />
-            <class name="com.juaracoding.selenium.authentication.ImportCuti" />
+            <class name="com.juaracoding.selenium.testcases.ImportStrukturUser" />
+            <class name="com.juaracoding.selenium.testcases.ImportStrukturUserNeg" />
+            <class name="com.juaracoding.selenium.testcases.ImportAbsen" />
+            <class name="com.juaracoding.selenium.testcases.ImportAbsenNeg" />
+            <class name="com.juaracoding.selenium.testcases.ImportCuti" />
+            <class name="com.juaracoding.selenium.testcases.ImportCutiNeg" />
         </classes>
     </test>
 

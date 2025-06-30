@@ -6,7 +6,7 @@ import com.juaracoding.selenium.utils.SignInUtil;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
-public class ImportStrukturUserTest extends TestBase {
+public class ImportStrukturUser extends TestBase {
 
     @Test
     public void testImportStrukturUser() throws InterruptedException {
