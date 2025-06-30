@@ -8,6 +8,8 @@
         <classes>
             <class name="com.juaracoding.selenium.testcases.ImportAbsenTest" />
             <class name="com.juaracoding.selenium.testcases.ImportStrukturUserTest" />
+            <class name="com.juaracoding.selenium.ImportAbsenNeg" />
+            <class name="com.juaracoding.selenium.authentication.ImportCuti" />
         </classes>
     </test>
 
