@@ -19,6 +19,7 @@ public class TestBase {
         ExtentSparkReporter htmlReporter = new ExtentSparkReporter("utils/extent-report.html");
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
+        extent.setSystemInfo("Tester", "Muhammad Adam Firmansyah");
         extent.setSystemInfo("Tester", "Qonita Lutfia");
     }
 
