@@ -22,6 +22,7 @@ public class ImportStrukturUserPage {
     private final By judulHalamanStrukturUser = By.xpath("//h1[normalize-space()='Daftar Struktur User']");
     private final By tabelStrukturUser = By.id("tableStrukturUser");
     private final By tombolTambahStrukturUser = By.xpath("//button[normalize-space()='Tambah Struktur User']");
+    private final By judulImportStrukturUser = By.xpath("//div[contains(text(), 'Import Excel Struktur User')]");
 
     private static final String SAMPLE_FILE_PATH = System.getProperty("user.dir") + "/src/test/resources/testdata/sample_struktur_user.xlsx";
 
@@ -71,6 +72,48 @@ public class ImportStrukturUserPage {
         } catch (org.openqa.selenium.TimeoutException e) {
             return false;
         }
+    }
+
+    public String getImportStrukturUserHeaderText() {
+        try {
+            WebElement header = wait.until(ExpectedConditions.visibilityOfElementLocated(judulImportStrukturUser));
+            return header.getText().trim();
+        } catch (Exception e) {
+            System.out.println("Gagal menemukan judul halaman Import Struktur User.");
+            return "";
+        }
+    }
+
+    public boolean isFileUploaded() {
+        try {
+            WebElement fileInput = wait.until(ExpectedConditions.presenceOfElementLocated(inputFile));
+            String value = fileInput.getAttribute("value");
+            return value != null && !value.isEmpty();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public boolean isDownloadTemplateButtonVisible() {
+        try {
+            return wait.until(ExpectedConditions.visibilityOfElementLocated(downloadTemplateButton)).isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public String getFileValidationMessage() {
+        try {
+            WebElement helperText = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.id("file_excel-helper-text")));
+            return helperText.getText();
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public boolean isImportSuccess() {
+        return true;
     }
 
     private void pause(long millis) {

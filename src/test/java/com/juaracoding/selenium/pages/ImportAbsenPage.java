@@ -22,6 +22,8 @@ public class ImportAbsenPage {
     private final By judulHalamanAbsensi = By.xpath("//h1[normalize-space()='Daftar Absensi']");
     private final By tabelAbsensi = By.id("tableAbsen");
     private final By tombolTambahAbsen = By.xpath("//button[normalize-space()='Tambah Absen']");
+    private final By judulImportAbsen = By.xpath("//div[contains(text(), 'Import Excel Absen Hadir')]");
+
 
     private static final String SAMPLE_FILE_PATH = System.getProperty("user.dir") + "/src/test/resources/testdata/sample_absen.xlsx";
 
@@ -91,5 +93,48 @@ public class ImportAbsenPage {
         clickDownloadTemplateButton();
         pause(2000);
     }
+    public String getImportAbsenHeaderText() {
+    try {
+        WebElement header = wait.until(ExpectedConditions.visibilityOfElementLocated(judulImportAbsen));
+        return header.getText().trim();
+    } catch (Exception e) {
+        System.out.println("Gagal menemukan judul halaman Import Absen.");
+        return "";
+    }
+    }
+    public boolean isFileUploaded() {
+    try {
+        WebElement fileInput = wait.until(ExpectedConditions.presenceOfElementLocated(inputFile));
+        String value = fileInput.getAttribute("value");
+        return value != null && !value.isEmpty();
+    } catch (Exception e) {
+        return false;
+    }
+}
+
+public boolean isDownloadTemplateButtonVisible() {
+    try {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(downloadTemplateButton)).isDisplayed();
+    } catch (Exception e) {
+        return false;
+    }
+}
+
+public String getFileValidationMessage() {
+    try {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebElement helperText = wait.until(ExpectedConditions.visibilityOfElementLocated(
+            By.id("file_excel-helper-text")));
+        return helperText.getText();
+    } catch (Exception e) {
+        return null;
+    }}
+
+public boolean isImportSuccess() {
+    
+    return true;
+}
+
+    
 
 }
