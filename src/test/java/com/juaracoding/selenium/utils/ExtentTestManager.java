@@ -1,18 +1,16 @@
 package com.juaracoding.selenium.utils;
 
 import com.aventstack.extentreports.*;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
-public class ExtentReport {
-
-
-    public class ExtentTestManager {
+public class ExtentTestManager {
 
         private static ExtentReports extent;
         private static ExtentTest test;
 
         public static void startReport() {
-            ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("target/extent-report.html");
+            ExtentSparkReporter htmlReporter = new ExtentSparkReporter("target/extent-report.html");
+        extent = new ExtentReports();
             extent = new ExtentReports();
             extent.attachReporter(htmlReporter);
         }
@@ -36,5 +34,5 @@ public class ExtentReport {
         public static void endTest() {
             extent.flush(); // Menulis semua log ke file
         }
-    }
 }
+
